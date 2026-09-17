@@ -1,0 +1,338 @@
+/* ==========================================================================
+   Adhya Desai — Portfolio Site
+   Theme: dark background with University of Maryland red/gold accents
+   ========================================================================== */
+
+:root {
+  --umd-red: #e21833;
+  --umd-red-dark: #a3121f;
+  --umd-gold: #ffd200;
+  --bg-black: #0a0a0a;
+  --bg-dark: #141414;
+  --bg-card: #1c1c1c;
+  --text-light: #f5f5f5;
+  --text-muted: #b3b3b3;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--bg-black);
+  color: var(--text-light);
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+h1, h2, h3, h4, h5, .brand-font {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-accent {
+  color: var(--umd-red);
+}
+
+.text-gold {
+  color: var(--umd-gold);
+}
+
+/* Bootstrap's default .text-muted is too dark for this theme */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-portfolio {
+  background-color: var(--bg-black) !important;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar-portfolio .navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-light) !important;
+}
+
+.navbar-portfolio .navbar-brand span {
+  color: var(--umd-red);
+}
+
+.navbar-portfolio .nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navbar-portfolio .nav-link:hover,
+.navbar-portfolio .nav-link.active {
+  color: var(--text-light) !important;
+}
+
+.navbar-portfolio .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--umd-red);
+}
+
+/* ---------- Hero (Home) ---------- */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(226, 24, 51, 0.25), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255, 210, 0, 0.12), transparent 40%),
+    linear-gradient(180deg, var(--bg-black) 0%, var(--bg-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .eyebrow {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--umd-gold);
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+.hero p.lead {
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+.btn-umd-primary {
+  background-color: var(--umd-red);
+  border-color: var(--umd-red);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.7rem 1.75rem;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-umd-primary:hover {
+  background-color: var(--umd-red-dark);
+  border-color: var(--umd-red-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-umd-outline {
+  border: 2px solid var(--text-light);
+  color: var(--text-light);
+  font-weight: 600;
+  padding: 0.65rem 1.75rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-umd-outline:hover {
+  background-color: var(--text-light);
+  color: var(--bg-black);
+  transform: translateY(-2px);
+}
+
+/* ---------- Page banner (About / Contact) ---------- */
+.page-banner {
+  padding: 6rem 0 3.5rem;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(226, 24, 51, 0.2), transparent 40%),
+    linear-gradient(180deg, var(--bg-black) 0%, var(--bg-dark) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.page-banner p.lead {
+  color: var(--text-muted);
+}
+
+/* ---------- Section spacing ---------- */
+section {
+  padding: 4.5rem 0;
+}
+
+.section-alt {
+  background-color: var(--bg-dark);
+}
+
+/* ---------- Cards ---------- */
+.card-dark {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 2rem;
+  height: 100%;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-dark:hover {
+  transform: translateY(-6px);
+  border-color: var(--umd-red);
+}
+
+.card-dark .icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(226, 24, 51, 0.15);
+  color: var(--umd-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Avatar ---------- */
+.avatar-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--umd-red), var(--umd-red-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 auto;
+  border: 4px solid var(--bg-card);
+  box-shadow: 0 0 0 2px var(--border-subtle);
+}
+
+/* ---------- Skill badges ---------- */
+.skill-badge {
+  display: inline-block;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.25rem;
+}
+
+/* ---------- Timeline (About) ---------- */
+.timeline-item {
+  border-left: 2px solid var(--border-subtle);
+  padding-left: 1.5rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--umd-red);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* ---------- Contact page ---------- */
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-info-item .icon-circle {
+  flex-shrink: 0;
+}
+
+.social-icon-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.social-icon-link:hover {
+  background-color: var(--umd-red);
+  border-color: var(--umd-red);
+  color: #fff;
+}
+
+.form-control-dark {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-light);
+  padding: 0.7rem 1rem;
+}
+
+.form-control-dark:focus {
+  background-color: var(--bg-card);
+  color: var(--text-light);
+  border-color: var(--umd-red);
+  box-shadow: 0 0 0 0.2rem rgba(226, 24, 51, 0.25);
+}
+
+.form-control-dark::placeholder {
+  color: var(--text-muted);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--bg-black);
+  border-top: 1px solid var(--border-subtle);
+  padding: 2rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--text-muted);
+}
+
+footer a:hover {
+  color: var(--umd-red);
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 767.98px) {
+  .hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+    text-align: center;
+  }
+
+  .hero p.lead {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-banner {
+    text-align: center;
+    padding: 6.5rem 0 2.5rem;
+  }
+}
