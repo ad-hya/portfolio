@@ -4,26 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adhya Desai | Home</title>
-  <meta name="description" content="Portfolio site of Adhya Desai" />
+  <meta name="description" content="Portfolio site of Adhya Desai — Software Engineering, Data & AI" />
 
-  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 
-  <!-- Custom styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-portfolio sticky-top py-3">
+  <nav class="navbar navbar-expand-lg navbar-portfolio sticky-top py-3">
     <div class="container">
-      <a class="navbar-brand brand-font fs-4" href="index.html">Adhya<span> Desai</span></a>
+      <a class="navbar-brand" href="index.html">adhya.desai</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,85 +33,168 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <header class="hero">
     <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8">
-          <p class="eyebrow mb-3">Welcome to my portfolio</p>
-          <h1 class="mb-4">Hi, I'm <span class="text-accent">Adhya Desai</span></h1>
-          <p class="lead mx-auto mb-4">
-            Information Systems student at the Robert H. Smith School of Business,
-            University of Maryland. I like building clean, functional web
-            experiences and solving business problems with technology.
-            <em>(placeholder text — update with your own tagline)</em>
+      <div class="row">
+        <div class="col-lg-9">
+          <p class="eyebrow mb-4">Software Engineering, Data &amp; AI — Open to Roles</p>
+          <h1 class="name-heading">
+            <span class="sans-part">Adhya</span>
+            <span class="serif-part">Desai.</span>
+          </h1>
+          <p class="lead mb-4">
+            Information Systems graduate student building data pipelines,
+            AI-driven decision-support systems, and applied machine learning
+            solutions that translate complex data into real-world impact.
           </p>
-          <div class="d-flex justify-content-center gap-3 flex-wrap">
-            <a href="contact.html" class="btn btn-umd-primary">Get In Touch</a>
-            <a href="about.html" class="btn btn-umd-outline">More About Me</a>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#projects" class="btn-mono-primary">View Projects &darr;</a>
+            <a href="contact.html" class="btn-mono-outline">Get in Touch</a>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- What I'm Into Section -->
+  <!-- About teaser -->
   <section>
     <div class="container">
-      <div class="row mb-5 text-center">
-        <div class="col-lg-8 mx-auto">
-          <p class="eyebrow text-gold mb-2">What I'm Into</p>
-          <h2>A Few Things I Care About</h2>
-        </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card-dark">
-            <div class="icon-circle"><i class="bi bi-code-slash"></i></div>
-            <h4>Web Development</h4>
-            <p class="text-muted mb-0">
-              Placeholder text describing your interest in building websites
-              and web apps with HTML, CSS, JavaScript, and frameworks.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-dark">
-            <div class="icon-circle"><i class="bi bi-bar-chart-line"></i></div>
-            <h4>Business Analytics</h4>
-            <p class="text-muted mb-0">
-              Placeholder text about using data to drive business decisions,
-              dashboards, and analytics projects you've worked on.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-dark">
-            <div class="icon-circle"><i class="bi bi-people"></i></div>
-            <h4>Collaboration</h4>
-            <p class="text-muted mb-0">
-              Placeholder text about teamwork, leadership, or student
-              organizations you're involved in at UMD.
-            </p>
-          </div>
+      <p class="eyebrow mb-4">About</p>
+      <div class="row">
+        <div class="col-lg-9">
+          <p class="mb-3">
+            I'm a graduate student in <strong>Information Systems at the
+            University of Maryland, College Park</strong>, focused on data
+            analytics, machine learning, and AI systems that support real
+            decisions.
+          </p>
+          <p class="text-muted mb-4">
+            My work spans end-to-end ML pipelines, generative AI
+            applications, and data infrastructure. I'm especially drawn to
+            problems where analytical rigor meets product thinking —
+            turning messy data into systems people can actually use.
+          </p>
+          <a href="about.html" class="btn-mono-outline">More About Me &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Banner -->
-  <section class="section-alt">
-    <div class="container text-center">
-      <h2 class="mb-3">Want to know more?</h2>
-      <p class="text-muted mb-4">Check out my background or reach out directly — I'd love to connect.</p>
-      <a href="contact.html" class="btn btn-umd-primary">Contact Me</a>
+  <!-- Selected Projects -->
+  <section id="projects">
+    <div class="container">
+      <p class="eyebrow mb-4">Selected Projects</p>
+
+      <div class="project-card">
+        <span class="project-index">01</span>
+        <h3>E-Commerce Analytics Pipeline</h3>
+        <p class="text-muted mb-3">
+          An end-to-end Snowflake data warehouse and Power BI dashboard
+          built on ~100K e-commerce orders, including a star schema design
+          and a controlled query performance optimization study.
+        </p>
+        <div>
+          <span class="tag">Snowflake</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Star Schema</span>
+          <span class="tag">Query Optimization</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="project-index">02</span>
+        <h3>NexLearn AI</h3>
+        <p class="text-muted mb-3">
+          An AI-powered academic decision-support system integrating Canvas
+          and Google Calendar to automate scheduling and surface student
+          engagement risks with a custom urgency-based prioritization
+          algorithm.
+        </p>
+        <div>
+          <span class="tag">Python</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">OpenAI API</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">Canvas API</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="project-index">03</span>
+        <h3>BiteRush</h3>
+        <p class="text-muted mb-3">
+          A full-stack food ordering application with a Vue 3 frontend and
+          an Express/PostgreSQL backend, integrating a third-party recipe
+          API for dynamic menu data.
+        </p>
+        <div>
+          <span class="tag">Vue 3</span>
+          <span class="tag">Express</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Tailwind</span>
+          <span class="tag">REST API</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="project-index">04</span>
+        <h3>Airline Delay Prediction</h3>
+        <p class="text-muted mb-3">
+          End-to-end ML pipeline using U.S. DOT flight data to predict
+          delay likelihood and identify the true drivers of delay
+          propagation — congestion and late aircraft dominate, weather
+          causes under 5%.
+        </p>
+        <div>
+          <span class="tag">Python</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">SHAP</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Matplotlib</span>
+        </div>
+      </div>
+
+      <div class="project-card mb-0">
+        <span class="project-index">05</span>
+        <h3>Mixalyzer</h3>
+        <p class="text-muted mb-3">
+          An AI-powered marketing mix optimization platform (team project)
+          measuring channel-level ROI and customer acquisition cost, with
+          benchmarked forecast models for confidence-ranged budget
+          recommendations.
+        </p>
+        <div>
+          <span class="tag">Python</span>
+          <span class="tag">Regression</span>
+          <span class="tag">Feature Engineering</span>
+          <span class="tag">Streamlit</span>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="https://github.com/ad-hya" target="_blank" rel="noopener" class="btn-mono-outline">More on GitHub &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 class="mb-3">Let's work on something meaningful.</h2>
+      <p class="text-muted mb-4">
+        Open to full-time roles in software engineering, data analytics,
+        and AI. Happy to chat about research, projects, or opportunities.
+      </p>
+      <a href="contact.html" class="btn-mono-primary">Contact Me</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start gap-2">
-      <p class="mb-0">&copy; 2026 Adhya Desai. Built for BUDT748.</p>
+      <p class="mb-0">&copy; 2026 Adhya Desai — College Park, MD</p>
       <div>
         <a href="index.html" class="me-3">Home</a>
         <a href="about.html" class="me-3">About</a>
@@ -124,7 +203,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>

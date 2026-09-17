@@ -1,162 +1,200 @@
 /* ==========================================================================
    Adhya Desai — Portfolio Site
-   Theme: dark background with University of Maryland red/gold accents
+   Theme: editorial minimalist — cream background, ink text, serif/mono mix
+   (companion style to adhya.desai's main portfolio)
    ========================================================================== */
 
 :root {
-  --umd-red: #e21833;
-  --umd-red-dark: #a3121f;
-  --umd-gold: #ffd200;
-  --bg-black: #0a0a0a;
-  --bg-dark: #141414;
-  --bg-card: #1c1c1c;
-  --text-light: #f5f5f5;
-  --text-muted: #b3b3b3;
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --bg: #f9f8f5;
+  --ink: #0e0e0e;
+  --muted: #6b6b6b;
+  --border: #e2e2e2;
+  --tag-bg: #efefed;
+  --tag-text: #3a3a3a;
+  --white: #ffffff;
 }
 
 body {
-  background-color: var(--bg-black);
-  color: var(--text-light);
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-h1, h2, h3, h4, h5, .brand-font {
-  font-family: "Montserrat", sans-serif;
+h1, h2, h3, h4, h5 {
+  font-family: "Instrument Sans", sans-serif;
   font-weight: 700;
+  color: var(--ink);
+}
+
+.serif-italic {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.mono {
+  font-family: "DM Mono", monospace;
 }
 
 a {
   text-decoration: none;
+  color: var(--ink);
 }
 
-.text-accent {
-  color: var(--umd-red);
-}
-
-.text-gold {
-  color: var(--umd-gold);
-}
-
-/* Bootstrap's default .text-muted is too dark for this theme */
 .text-muted {
-  color: var(--text-muted) !important;
+  color: var(--muted) !important;
+}
+
+.eyebrow {
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.eyebrow::after {
+  content: "";
+  flex: 0 0 40px;
+  height: 1px;
+  background-color: var(--border);
+}
+
+.eyebrow.center {
+  justify-content: center;
+}
+
+.eyebrow.center::after {
+  display: none;
 }
 
 /* ---------- Navbar ---------- */
 .navbar-portfolio {
-  background-color: var(--bg-black) !important;
-  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg) !important;
+  border-bottom: 1px solid var(--border);
 }
 
 .navbar-portfolio .navbar-brand {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: var(--text-light) !important;
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--ink) !important;
 }
 
-.navbar-portfolio .navbar-brand span {
-  color: var(--umd-red);
+.navbar-portfolio .navbar-toggler {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.6rem;
+}
+
+.navbar-portfolio .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-portfolio .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(14, 14, 14, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-portfolio .nav-link {
-  color: var(--text-muted) !important;
-  font-weight: 600;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  position: relative;
-  transition: color 0.2s ease;
+  color: var(--ink) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .navbar-portfolio .nav-link:hover,
 .navbar-portfolio .nav-link.active {
-  color: var(--text-light) !important;
+  color: var(--ink) !important;
+  border-bottom-color: var(--ink);
 }
 
-.navbar-portfolio .nav-link.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--umd-red);
+/* ---------- Buttons ---------- */
+.btn-mono-primary {
+  background-color: var(--ink);
+  border: 1px solid var(--ink);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 2px;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
-/* ---------- Hero (Home) ---------- */
-.hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(226, 24, 51, 0.25), transparent 45%),
-    radial-gradient(circle at 85% 80%, rgba(255, 210, 0, 0.12), transparent 40%),
-    linear-gradient(180deg, var(--bg-black) 0%, var(--bg-dark) 100%);
-  position: relative;
-  overflow: hidden;
+.btn-mono-primary:hover {
+  background-color: #2a2a2a;
+  border-color: #2a2a2a;
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
-.hero .eyebrow {
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: var(--umd-gold);
-  font-weight: 600;
-}
-
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  line-height: 1.1;
-}
-
-.hero p.lead {
-  color: var(--text-muted);
-  max-width: 560px;
-}
-
-.btn-umd-primary {
-  background-color: var(--umd-red);
-  border-color: var(--umd-red);
-  color: #fff;
-  font-weight: 600;
-  padding: 0.7rem 1.75rem;
-  border-radius: 6px;
-  transition: transform 0.15s ease, background-color 0.15s ease;
-}
-
-.btn-umd-primary:hover {
-  background-color: var(--umd-red-dark);
-  border-color: var(--umd-red-dark);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.btn-umd-outline {
-  border: 2px solid var(--text-light);
-  color: var(--text-light);
-  font-weight: 600;
-  padding: 0.65rem 1.75rem;
-  border-radius: 6px;
+.btn-mono-outline {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 2px;
   transition: all 0.15s ease;
 }
 
-.btn-umd-outline:hover {
-  background-color: var(--text-light);
-  color: var(--bg-black);
-  transform: translateY(-2px);
+.btn-mono-outline:hover {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 7rem 0 5rem;
+}
+
+.hero .name-heading {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.hero .name-heading .sans-part {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  display: block;
+}
+
+.hero .name-heading .serif-part {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--muted);
+  display: block;
+}
+
+.hero p.lead {
+  color: var(--muted);
+  font-size: 1.15rem;
+  max-width: 620px;
 }
 
 /* ---------- Page banner (About / Contact) ---------- */
 .page-banner {
-  padding: 6rem 0 3.5rem;
-  background:
-    radial-gradient(circle at 90% 10%, rgba(226, 24, 51, 0.2), transparent 40%),
-    linear-gradient(180deg, var(--bg-black) 0%, var(--bg-dark) 100%);
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 6.5rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-banner h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  margin: 1rem 0;
 }
 
 .page-banner p.lead {
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 /* ---------- Section spacing ---------- */
@@ -164,164 +202,219 @@ section {
   padding: 4.5rem 0;
 }
 
-.section-alt {
-  background-color: var(--bg-dark);
+section + section {
+  border-top: 1px solid var(--border);
 }
 
-/* ---------- Cards ---------- */
-.card-dark {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+/* ---------- Project cards ---------- */
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 2px;
   padding: 2rem;
-  height: 100%;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s ease;
 }
 
-.card-dark:hover {
-  transform: translateY(-6px);
-  border-color: var(--umd-red);
+.project-card:hover {
+  border-color: var(--ink);
 }
 
-.card-dark .icon-circle {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: rgba(226, 24, 51, 0.15);
-  color: var(--umd-red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 1.25rem;
+.project-index {
+  font-family: "DM Mono", monospace;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
-/* ---------- Avatar ---------- */
-.avatar-circle {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--umd-red), var(--umd-red-dark));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 auto;
-  border: 4px solid var(--bg-card);
-  box-shadow: 0 0 0 2px var(--border-subtle);
+.project-card h3 {
+  font-size: 1.4rem;
+  margin: 0.5rem 0 0.75rem;
 }
 
-/* ---------- Skill badges ---------- */
-.skill-badge {
+.tag {
   display: inline-block;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-light);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin: 0.25rem;
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.3rem 0.55rem;
+  border-radius: 2px;
+  margin: 0.2rem 0.3rem 0.2rem 0;
 }
 
-/* ---------- Timeline (About) ---------- */
-.timeline-item {
-  border-left: 2px solid var(--border-subtle);
-  padding-left: 1.5rem;
-  padding-bottom: 2rem;
+/* ---------- Skills rows ---------- */
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-row:last-child {
+  border-bottom: none;
+}
+
+.skill-row .skill-label {
+  font-weight: 600;
+}
+
+.skill-row .skill-value {
+  font-family: "DM Mono", monospace;
+  color: var(--muted);
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+/* ---------- Education ---------- */
+.edu-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.edu-item:last-child {
+  border-bottom: none;
+}
+
+.edu-item h5 {
+  margin-bottom: 0.2rem;
+}
+
+/* ---------- Experience timeline ---------- */
+.exp-item {
+  border-left: 2px solid var(--border);
+  padding-left: 1.75rem;
+  padding-bottom: 2.5rem;
   position: relative;
 }
 
-.timeline-item::before {
+.exp-item::before {
   content: "";
   position: absolute;
-  left: -7px;
+  left: -6px;
   top: 4px;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: var(--umd-red);
+  background-color: var(--ink);
 }
 
-.timeline-item:last-child {
+.exp-item:last-child {
   padding-bottom: 0;
 }
 
-/* ---------- Contact page ---------- */
-.contact-info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
-}
-
-.contact-info-item .icon-circle {
-  flex-shrink: 0;
-}
-
-.social-icon-link {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-light);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.exp-item .exp-role {
+  font-weight: 700;
   font-size: 1.1rem;
-  margin-right: 0.5rem;
-  transition: all 0.2s ease;
+  margin-bottom: 0.15rem;
 }
 
-.social-icon-link:hover {
-  background-color: var(--umd-red);
-  border-color: var(--umd-red);
-  color: #fff;
+.exp-item .exp-meta {
+  font-family: "DM Mono", monospace;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-bottom: 0.75rem;
 }
 
-.form-control-dark {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-light);
+.exp-item ul {
+  color: var(--muted);
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+}
+
+.exp-item ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- CTA banner ---------- */
+.cta-banner {
+  text-align: center;
+}
+
+/* ---------- Contact page ---------- */
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.contact-row:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.contact-row .contact-label {
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.contact-row .contact-value {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.contact-row .contact-value:hover {
+  text-decoration: underline;
+}
+
+.form-control-mono {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--ink);
   padding: 0.7rem 1rem;
 }
 
-.form-control-dark:focus {
-  background-color: var(--bg-card);
-  color: var(--text-light);
-  border-color: var(--umd-red);
-  box-shadow: 0 0 0 0.2rem rgba(226, 24, 51, 0.25);
+.form-control-mono:focus {
+  background-color: var(--white);
+  color: var(--ink);
+  border-color: var(--ink);
+  box-shadow: none;
 }
 
-.form-control-dark::placeholder {
-  color: var(--text-muted);
+.form-control-mono::placeholder {
+  color: #b5b5b5;
+}
+
+.form-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
 }
 
 /* ---------- Footer ---------- */
 footer {
-  background-color: var(--bg-black);
-  border-top: 1px solid var(--border-subtle);
+  background-color: var(--bg);
+  border-top: 1px solid var(--border);
   padding: 2rem 0;
-  color: var(--text-muted);
-  font-size: 0.9rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-family: "DM Mono", monospace;
 }
 
 footer a {
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 footer a:hover {
-  color: var(--umd-red);
+  color: var(--ink);
 }
 
 /* ---------- Responsive tweaks ---------- */
 @media (max-width: 767.98px) {
   .hero {
-    min-height: auto;
-    padding: 7rem 0 4rem;
+    padding: 6.5rem 0 3rem;
     text-align: center;
   }
 
@@ -331,8 +424,33 @@ footer a:hover {
     margin-right: auto;
   }
 
+  .hero .eyebrow {
+    justify-content: center;
+  }
+
+  .hero .eyebrow::after {
+    display: none;
+  }
+
   .page-banner {
     text-align: center;
-    padding: 6.5rem 0 2.5rem;
+  }
+
+  .page-banner .eyebrow {
+    justify-content: center;
+  }
+
+  .page-banner .eyebrow::after {
+    display: none;
+  }
+
+  .skill-row,
+  .contact-row {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .contact-row .contact-value {
+    text-align: left;
   }
 }
