@@ -5,8 +5,8 @@ CSS, and Bootstrap 5, for BUDT748 (Fall 2026).
 
 ## Live Site
 
-- Live URL: _add after deploying to GitHub Pages_
-- Repository: _add repo URL_
+- Live URL: https://ad-hya.github.io/portfolio/
+- Repository: https://github.com/ad-hya/portfolio
 
 ## Structure
 
