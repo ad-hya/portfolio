@@ -182,6 +182,86 @@ a {
   max-width: 620px;
 }
 
+/* ---------- Hero: rotating role typewriter ---------- */
+.role-line {
+  font-family: "DM Mono", monospace;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+}
+
+.role-line .role-static {
+  color: var(--muted);
+}
+
+.role-line .role-typewriter {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.type-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--ink);
+  animation: cursor-blink 1s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .type-cursor {
+    animation: none;
+  }
+}
+
+/* ---------- Hero: stat counters ---------- */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat-num {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.hero-stat-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+
+.hero-divider {
+  width: 1px;
+  height: 34px;
+  background: var(--border);
+}
+
+@media (max-width: 767.98px) {
+  .hero-stats {
+    justify-content: center;
+  }
+}
+
 /* ---------- Page banner (About / Contact) ---------- */
 .page-banner {
   padding: 6.5rem 0 3rem;
