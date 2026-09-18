@@ -431,6 +431,18 @@ footer a:hover {
   }
 }
 
+@media print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .back-to-top {
+    display: none !important;
+  }
+}
+
 /* ---------- Back to top ---------- */
 .back-to-top {
   position: fixed;
